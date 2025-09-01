@@ -27,9 +27,9 @@ const Header = () => {
     <>
       {/* Top bar */}
       <div className="bg-secondary text-white py-2 text-sm">
-        <div className="container-main flex justify-between items-center">
-          <div className="flex items-center gap-2 sm:gap-6 overflow-hidden">
-            <div className="flex items-center gap-1 sm:gap-2 min-w-0">
+        <div className="container-main flex items-center px-4 sm:px-6">
+          <div className="flex items-center gap-2 sm:gap-4 md:gap-6 overflow-hidden">
+            <div className="flex items-center gap-1 sm:gap-2 min-w-0 flex-shrink-0">
               <Phone className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
               <span className="truncate text-xs sm:text-sm">+91 98765 43210</span>
             </div>
@@ -48,10 +48,10 @@ const Header = () => {
       {/* Main header */}
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="container-main">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-12 xs:h-14 sm:h-16 md:h-18 lg:h-20">
             
             {/* Back Button & Logo */}
-            <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+            <div className="flex items-center gap-1 sm:gap-2 md:gap-3 min-w-0 flex-1">
               {showBackButton && (
                 <Button 
                   variant="ghost" 
@@ -66,11 +66,11 @@ const Header = () => {
                 <img 
                   src="/logo.png" 
                   alt="Kavita Cooler Logo" 
-                  className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-auto object-contain flex-shrink-0"
+                  className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-auto object-contain flex-shrink-0"
                 />
                 <div className="hidden sm:block min-w-0">
-                  <h1 className="text-lg md:text-xl font-bold text-secondary truncate">Kavita Cooler</h1>
-                  <p className="text-xs text-muted-foreground truncate">Authorized Dealers & Service</p>
+                  <h1 className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-secondary truncate">Kavita Cooler</h1>
+                  <p className="text-xs xs:text-xs sm:text-sm text-muted-foreground truncate">Authorized Dealers & Service</p>
                 </div>
               </Link>
             </div>
@@ -97,7 +97,7 @@ const Header = () => {
             </nav>
 
             {/* Search & Actions */}
-            <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
+            <div className="flex items-center gap-1 sm:gap-2 md:gap-4 flex-shrink-0">
               
               {/* Search */}
               <div className="hidden md:flex items-center gap-2">

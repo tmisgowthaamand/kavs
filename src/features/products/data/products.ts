@@ -15,9 +15,7 @@ export const products: Product[] = [
     inStock: true,
     description: "Experience stunning 4K UHD resolution with HDR for incredible detail, vibrant colors, and deep contrast. Smart TV features let you stream movies, shows, and music from your favorite apps.",
     images: [
-      "https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=1000",
-      "https://images.unsplash.com/photo-1593305848501-9c8c8b0b3f3d?q=80&w=1000",
-      "https://images.unsplash.com/photo-1593305848501-9c8c8b0b3f3e?q=80&w=1000"
+      "https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=1000"
     ],
     features: [
       "4K UHD Resolution (3840 x 2160)",

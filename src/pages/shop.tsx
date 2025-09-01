@@ -341,8 +341,8 @@ export default function ShopPage() {
           <section aria-labelledby="products-heading" className="pb-24 pt-6">
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
               {/* Desktop filters */}
-              <div className="hidden lg:block">
-                <div className="space-y-6 border-b border-gray-200 pb-6">
+              <aside className="w-full lg:w-72 xl:w-80 2xl:w-96">
+                <div className="space-y-4 sm:space-y-6 rounded-lg bg-white p-3 sm:p-4 md:p-6 shadow-sm">
                   <form onSubmit={handleSearch} className="relative">
                     <Input
                       type="text"
@@ -357,7 +357,7 @@ export default function ShopPage() {
                   </form>
                 </div>
                 
-                <div className="space-y-6 pt-6">
+                <div className="space-y-4 sm:space-y-6 pt-6">
                   <FilterSection
                     title="Categories"
                     filterType="category"
@@ -423,13 +423,13 @@ export default function ShopPage() {
                     </Button>
                   )}
                 </div>
-              </div>
+              </aside>
 
               {/* Product grid */}
               <div className="lg:col-span-3">
                 {/* Active filters */}
                 {hasActiveFilters && (
-                  <div className="mb-4 flex flex-wrap items-center gap-2">
+                  <div className="flex flex-col gap-4 sm:gap-6 lg:flex-row lg:items-start lg:gap-8">
                     <span className="text-sm font-medium text-gray-700">Filters:</span>
                     
                     {Object.entries(activeFilters).map(([filterType, values]) => {
@@ -618,7 +618,7 @@ function FilterSection({
       </button>
       
       {isOpen && (
-        <div className="mt-4 space-y-3">
+        <div className="mb-4 sm:mb-6 md:mb-8 space-y-4 sm:space-y-6">
           {options.map((option) => (
             <div key={option.id} className="flex items-center">
               <Checkbox

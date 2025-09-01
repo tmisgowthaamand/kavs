@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { motion, MotionConfig, HTMLMotionProps } from "framer-motion";
-import { Star, ShoppingCart, Check, Heart, HeartOff } from "lucide-react";
+import { motion, MotionConfig } from "framer-motion";
+import { Star, ShoppingCart, Check, Heart } from "lucide-react";
 import { useCart } from "@/features/cart";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -9,7 +9,6 @@ import { Product } from "../types";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 
-const MotionButton = motion(Button) as React.FC<HTMLMotionProps<"button">>;
 
 interface ProductCardProps {
   product: Product;
@@ -102,10 +101,10 @@ export function ProductCard({
       <Link to={`/products/${id}`} className="block h-full">
         <motion.article
           className={cn(
-            "group relative flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300",
+            "group relative flex h-full flex-col overflow-hidden rounded-lg sm:rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300",
             "hover:shadow-lg hover:-translate-y-0.5",
             !inStock && "opacity-80",
-            isCompact && "flex-row items-center gap-4 p-3",
+            isCompact && "flex-row items-center gap-2 sm:gap-4 p-2 sm:p-3",
             className
           )}
           whileHover={{ scale: 1.02 }}
@@ -151,15 +150,15 @@ export function ProductCard({
 
           {/* Product Image */}
           <div className={cn(
-            "relative flex items-center justify-center bg-gray-50 p-4",
-            isCompact ? "h-20 w-20 shrink-0 rounded-lg" : "aspect-square"
+            "relative flex items-center justify-center bg-gray-50 p-1 sm:p-2 md:p-4",
+            isCompact ? "h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 shrink-0 rounded-lg" : "aspect-square"
           )}>
             <img
               src={image}
               alt={title}
               className={cn(
                 "h-full w-full object-contain transition-transform group-hover:scale-105",
-                isCompact ? "h-16 w-16" : "h-48 w-48"
+                isCompact ? "h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16" : "h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48"
               )}
               loading="lazy"
             />
@@ -174,8 +173,8 @@ export function ProductCard({
 
           {/* Product Info */}
           <div className={cn(
-            "flex flex-1 flex-col p-4 pt-2",
-            isCompact && "flex-1 p-0"
+            "flex flex-1 flex-col p-2 sm:p-3 md:p-4 pt-1 sm:pt-2",
+            isCompact && "flex-1 p-0 pl-2 sm:pl-3"
           )}>
             <div className="flex-1">
               {showBrand && (
@@ -189,8 +188,8 @@ export function ProductCard({
               
               <h3 className={cn(
                 "font-medium text-gray-900 line-clamp-2",
-                isCompact ? "text-sm" : "text-base",
-                isDetailed && "text-lg font-semibold"
+                isCompact ? "text-xs sm:text-sm md:text-base" : "text-xs sm:text-sm md:text-base lg:text-lg",
+                isDetailed && "text-sm sm:text-base md:text-lg lg:text-xl font-semibold"
               )}>
                 {title}
               </h3>
@@ -239,7 +238,7 @@ export function ProductCard({
             
             <div className="mt-3">
               <div className="flex items-baseline gap-2">
-                <span className={cn("font-semibold text-gray-900", isDetailed ? "text-xl" : "text-lg")}>
+                <span className={cn("font-semibold text-gray-900", isDetailed ? "text-base sm:text-lg md:text-xl lg:text-2xl" : "text-sm sm:text-base md:text-lg lg:text-xl")}>
                   {formattedPrice}
                 </span>
                 {showMrp && (
@@ -258,15 +257,14 @@ export function ProductCard({
               )}
               
               <div className="mt-3">
-                <MotionButton
+                <Button
                   size={isCompact ? "sm" : "default"}
                   className={cn(
-                    "w-full",
-                    isCompact && "h-8 text-xs"
+                    "w-full text-xs sm:text-sm",
+                    isCompact && "h-6 sm:h-8 text-xs"
                   )}
                   onClick={handleAddToCart}
                   disabled={!inStock || isAdding || isAdded}
-                  whileTap={!isAdding && !isAdded ? { scale: 0.98 } : {}}
                 >
                   {isAdding ? (
                     <motion.span
@@ -309,7 +307,7 @@ export function ProductCard({
                       Add to Cart
                     </motion.span>
                   )}
-                </MotionButton>
+                </Button>
               </div>
             </div>
           </div>

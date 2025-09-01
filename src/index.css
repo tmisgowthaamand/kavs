@@ -4,6 +4,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom responsive utilities */
+@layer utilities {
+  .container-main {
+    @apply mx-auto max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8;
+  }
+  
+  /* Device-specific breakpoints */
+  .mobile-only {
+    @apply block sm:hidden;
+  }
+  
+  .tablet-up {
+    @apply hidden sm:block;
+  }
+  
+  .desktop-up {
+    @apply hidden lg:block;
+  }
+  
+  /* Text scaling for devices */
+  .text-responsive {
+    @apply text-xs sm:text-sm md:text-base lg:text-lg;
+  }
+  
+  .text-responsive-lg {
+    @apply text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl;
+  }
+  
+  /* Spacing utilities */
+  .gap-responsive {
+    @apply gap-2 sm:gap-3 md:gap-4 lg:gap-6;
+  }
+  
+  .p-responsive {
+    @apply p-2 sm:p-3 md:p-4 lg:p-6;
+  }
+  
+  /* Grid responsive */
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6;
+  }
+}
+
 /* Kavita Cooler Design System - All colors in HSL */
 @layer base {
   :root {
@@ -131,6 +174,15 @@
   /* Typography System - Mobile First Responsive */
   .text-hero {
     @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+    font-size: clamp(14px, 2.5vw, 16px);
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   .text-section-title {

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { motion, MotionConfig, HTMLMotionProps } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 import { Star, ShoppingCart, Check } from "lucide-react";
 import { useCart } from "@/features/cart/CartContext";
 import { useState } from "react";
@@ -20,7 +20,6 @@ interface ProductCardProps {
   className?: string;
 }
 
-const MotionButton = motion(Button) as React.FC<HTMLMotionProps<"button">>;
 
 export function ProductCard({
   id,
@@ -36,7 +35,7 @@ export function ProductCard({
   className,
   ...props
 }: ProductCardProps) {
-  const { addItem, isInCart } = useCart();
+  const { addToCart, isInCart } = useCart();
   const [isAdding, setIsAdding] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
   
@@ -55,26 +54,19 @@ export function ProductCard({
     setIsAdding(true);
     
     // Create product object without quantity
-    const product = {
+    // Add item to cart (quantity will be added by the context)
+    addToCart({
       id,
       title,
-      brand,
       price,
       mrp: mrp || price,
-      discountPct: discountPct || 0,
-      rating: rating?.value || 0,
-      reviewsCount: rating?.count || 0,
       image: imageUrl,
-      inStock,
-      category: '', // Will be set when product is added from the product page
-      specs: specs.reduce((acc, spec) => {
-        const [key, value] = spec.split(':').map(s => s.trim());
-        return { ...acc, [key]: value };
-      }, {} as Record<string, string>)
-    };
-    
-    // Add item to cart (quantity will be added by the context)
-    addItem(product);
+      discountPct: discountPct || 0,
+      brand,
+      category: "",
+      inStock
+    });
+
     
     // Show feedback
     setIsAdded(true);
@@ -98,10 +90,7 @@ export function ProductCard({
           !inStock && "opacity-80",
           className
         )}
-        whileHover={{ 
-          y: -4,
-          transition: { duration: 0.2, ease: [0.4, 0, 0.2, 1] } 
-        }}
+        whileHover={{ y: -4 }}
         initial={false}
         {...props}
       >
@@ -110,7 +99,7 @@ export function ProductCard({
           <img
             src={imageUrl || '/placeholder-product.jpg'}
             alt={title}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="h-full w-full object-contain sm:object-cover transition-transform duration-300 group-hover:scale-105 p-2 sm:p-0"
             loading="lazy"
             width={400}
             height={300}
@@ -136,18 +125,18 @@ export function ProductCard({
         </div>
 
         {/* Card Body */}
-        <div className="flex flex-1 flex-col p-4">
+        <div className="flex flex-1 flex-col p-2 xs:p-3 sm:p-4">
           {/* Title */}
           <h3 
-            className="mb-1.5 font-poppins text-base font-semibold text-gray-900 line-clamp-2 h-12"
+            className="mb-1 xs:mb-1.5 font-poppins text-xs xs:text-sm sm:text-base font-semibold text-gray-900 line-clamp-2 h-8 xs:h-10 sm:h-12"
             title={title}
           >
             {title}
           </h3>
           
           {/* Brand & Rating */}
-          <div className="mb-2 flex items-center justify-between">
-            <span className="font-dm-sans text-sm text-gray-600">{brand}</span>
+          <div className="mb-1 xs:mb-2 flex items-center justify-between">
+            <span className="font-dm-sans text-xs xs:text-sm text-gray-600">{brand}</span>
             {rating && (
               <div className="inline-flex items-center gap-0.5">
                 <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
@@ -162,7 +151,7 @@ export function ProductCard({
           {/* Specs */}
           {specs.length > 0 && (
             <p 
-              className="mb-4 line-clamp-2 h-10 font-dm-sans text-sm text-gray-600"
+              className="mb-2 xs:mb-3 sm:mb-4 line-clamp-2 h-6 xs:h-8 sm:h-10 font-dm-sans text-xs sm:text-sm text-gray-600"
               title={specs.join(", ")}
             >
               {specs.join(", ")}
@@ -170,18 +159,18 @@ export function ProductCard({
           )}
           
           {/* Price Block */}
-          <div className="mt-4 flex items-start justify-between">
+          <div className="mt-2 xs:mt-3 sm:mt-4 flex items-start justify-between">
             <div className="flex-1 pr-2">
-              <p className="text-sm text-gray-500 truncate">{brand}</p>
-              <h3 className="mt-1 text-sm font-medium text-gray-900 line-clamp-2 h-10">
+              <p className="text-xs xs:text-sm text-gray-500 truncate">{brand}</p>
+              <h3 className="mt-1 text-xs xs:text-sm font-medium text-gray-900 line-clamp-2 h-8 xs:h-10">
                 {title}
               </h3>
               
-              <div className="mt-2">
+              <div className="mt-1 xs:mt-2 sm:mt-3">
                 <Button 
                   variant={itemInCart || isAdded ? "outline" : "default"}
                   size="sm" 
-                  className="w-full group-hover:opacity-100 transition-opacity duration-200"
+                  className="w-full text-xs sm:text-sm h-6 xs:h-8 sm:h-9 group-hover:opacity-100 transition-opacity duration-200"
                   onClick={handleAddToCart}
                   disabled={!inStock || isAdding || isAdded}
                 >
@@ -211,7 +200,7 @@ export function ProductCard({
                   ₹{formattedMrp}
                 </p>
               )}
-              <p className="font-medium text-gray-900">₹{formattedPrice}</p>
+              <p className="font-medium text-gray-900 text-xs xs:text-sm sm:text-base">₹{formattedPrice}</p>
               {hasDiscount && (
                 <span className="text-xs font-medium text-green-600">
                   {discountPct}% off

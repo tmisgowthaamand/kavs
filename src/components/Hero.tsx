@@ -21,9 +21,9 @@ const Hero = () => {
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-hero text-secondary">
+              <h1 className="text-hero text-white">
                 Premium Home Appliances
-                <span className="block text-primary">Sales & Service</span>
+                <span className="block text-white">Sales & Service</span>
               </h1>
               <p className="text-body text-lg max-w-lg">
                 Your trusted partner for quality appliances from top brands. Expert sales consultation and professional service support for all your home needs.

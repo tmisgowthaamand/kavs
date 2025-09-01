@@ -29,10 +29,10 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#0F172A] text-[#F9FAFB] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
         {/* Top Section: Navigation Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16"
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -173,10 +173,10 @@ const Footer = () => {
           }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <p className="text-center text-[#9CA3AF] text-sm mb-6">
+          <p className="text-center text-[#9CA3AF] text-xs sm:text-sm mb-4 sm:mb-6 px-4">
             Authorized Service Partner for Trusted Global Brands.
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8">
             {[
               { name: 'Godrej', logo: '/godrej logo.jpg' },
               { name: 'Panasonic', logo: '/panasonic logo.jpg' },
@@ -187,21 +187,25 @@ const Footer = () => {
             ].map((brand, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-3 group"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="w-8 h-8 bg-white rounded p-1">
-                  <img 
-                    src={brand.logo} 
-                    alt={`${brand.name} logo`}
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <span className="text-[#9CA3AF] text-sm font-medium group-hover:text-white transition-colors duration-200">
-                  {brand.name}
-                </span>
+                <Link
+                  to={`/shop?brand=${brand.name.toLowerCase()}`}
+                  className="flex items-center gap-3 group"
+                >
+                  <div className="w-8 h-8 bg-white rounded p-1">
+                    <img 
+                      src={brand.logo} 
+                      alt={`${brand.name} logo`}
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="text-[#9CA3AF] text-sm font-medium group-hover:text-white transition-colors duration-200">
+                    {brand.name}
+                  </span>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -210,7 +214,7 @@ const Footer = () => {
 
         {/* Bottom Section: Legal + Copyright */}
         <motion.div 
-          className="pt-8 border-t border-[#1E293B] flex flex-col md:flex-row justify-between items-center gap-4"
+          className="pt-6 sm:pt-8 border-t border-[#1E293B] flex flex-col md:flex-row justify-between items-center gap-4 px-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView="show"
           variants={{
@@ -225,7 +229,7 @@ const Footer = () => {
           <p className="text-[#9CA3AF] text-sm">
             © {new Date().getFullYear()} Kavita Cooler. All Rights Reserved.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
             {[
               { text: 'Privacy Policy', path: '/privacy' },
               { text: 'Terms & Conditions', path: '/terms' },
@@ -235,7 +239,7 @@ const Footer = () => {
               <Link
                 key={index}
                 to={item.path}
-                className="text-[#9CA3AF] hover:text-[#FF7A00] text-xs md:text-sm transition-colors duration-200"
+                className="text-[#9CA3AF] hover:text-[#FF7A00] text-xs sm:text-sm transition-colors duration-200"
               >
                 {item.text}
               </Link>
