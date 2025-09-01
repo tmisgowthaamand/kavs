@@ -28,19 +28,19 @@ const Header = () => {
       {/* Top bar */}
       <div className="bg-secondary text-white py-2 text-sm">
         <div className="container-main flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <span>+91 98765 43210</span>
+          <div className="flex items-center gap-2 sm:gap-6 overflow-hidden">
+            <div className="flex items-center gap-1 sm:gap-2 min-w-0">
+              <Phone className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+              <span className="truncate text-xs sm:text-sm">+91 98765 43210</span>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" />
-              <span>Mumbai, Maharashtra</span>
+            <div className="hidden sm:flex items-center gap-2 min-w-0">
+              <MapPin className="h-4 w-4 flex-shrink-0" />
+              <span className="truncate">Mumbai, Maharashtra</span>
             </div>
           </div>
           <div className="hidden md:flex items-center gap-2">
             <Clock className="h-4 w-4" />
-            <span>Mon-Sat: 9AM-8PM</span>
+            <span className="whitespace-nowrap">Mon-Sat: 9AM-8PM</span>
           </div>
         </div>
       </div>
@@ -51,26 +51,26 @@ const Header = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             
             {/* Back Button & Logo */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
               {showBackButton && (
                 <Button 
                   variant="ghost" 
                   size="icon"
                   onClick={() => navigate(-1)}
-                  className="text-secondary hover:text-primary"
+                  className="text-secondary hover:text-primary flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10"
                 >
-                  <ArrowLeft className="h-5 w-5" />
+                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               )}
-              <Link to="/" className="flex items-center gap-3">
+              <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
                 <img 
                   src="/logo.png" 
                   alt="Kavita Cooler Logo" 
-                  className="h-12 w-auto object-contain"
+                  className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-auto object-contain flex-shrink-0"
                 />
-                <div className="hidden sm:block">
-                  <h1 className="text-xl font-bold text-secondary">Kavita Cooler</h1>
-                  <p className="text-xs text-muted-foreground">Authorized Dealers & Service</p>
+                <div className="hidden sm:block min-w-0">
+                  <h1 className="text-lg md:text-xl font-bold text-secondary truncate">Kavita Cooler</h1>
+                  <p className="text-xs text-muted-foreground truncate">Authorized Dealers & Service</p>
                 </div>
               </Link>
             </div>
@@ -97,7 +97,7 @@ const Header = () => {
             </nav>
 
             {/* Search & Actions */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
               
               {/* Search */}
               <div className="hidden md:flex items-center gap-2">
@@ -107,7 +107,7 @@ const Header = () => {
                       <Input
                         type="text"
                         placeholder="Search products..."
-                        className="w-64 pr-10"
+                        className="w-48 lg:w-64 pr-10"
                         onKeyDown={(e) => {
                           if (e.key === 'Enter') {
                             const searchTerm = (e.target as HTMLInputElement).value;
@@ -132,6 +132,7 @@ const Header = () => {
                     size="icon" 
                     variant="ghost"
                     onClick={() => setIsSearchOpen(true)}
+                    className="h-8 w-8 sm:h-10 sm:w-10"
                   >
                     <Search className="h-4 w-4" />
                   </Button>
@@ -144,8 +145,8 @@ const Header = () => {
               </div>
 
               {/* Book Service Button */}
-              <div className="hidden lg:block">
-                <Button asChild>
+              <div className="hidden xl:block">
+                <Button asChild size="sm" className="whitespace-nowrap">
                   <Link to="/service">Book Service</Link>
                 </Button>
               </div>
@@ -153,11 +154,11 @@ const Header = () => {
               {/* Mobile menu */}
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button size="icon" variant="ghost" className="lg:hidden">
-                    <Menu className="h-5 w-5" />
+                  <Button size="icon" variant="ghost" className="lg:hidden h-8 w-8 sm:h-10 sm:w-10">
+                    <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-80">
+                <SheetContent side="right" className="w-[85vw] max-w-sm">
                   <div className="flex flex-col gap-6 mt-8">
                     
                     {/* Mobile Search */}

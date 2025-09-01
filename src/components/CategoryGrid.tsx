@@ -17,7 +17,7 @@ const CategoryGrid = () => {
       description: 'Energy efficient cooling solutions',
       image: refrigeratorImage,
       itemCount: '150+ Models',
-      href: '/shop/refrigerator',
+      href: '/shop?category=Refrigerator',
     },
     {
       id: 'ac',
@@ -25,7 +25,7 @@ const CategoryGrid = () => {
       description: 'Smart cooling for every room',
       image: '/lg.jpg',
       itemCount: '120+ Models',
-      href: '/shop/ac',
+      href: '/shop?category=AC',
     },
     {
       id: 'tv',
@@ -33,7 +33,7 @@ const CategoryGrid = () => {
       description: 'Smart TVs with latest technology',
       image: tvImage,
       itemCount: '200+ Models',
-      href: '/shop/tv',
+      href: '/shop?category=TV',
     },
     {
       id: 'washing-machine',
@@ -41,7 +41,7 @@ const CategoryGrid = () => {
       description: 'Efficient laundry solutions',
       image: washingMachineImage,
       itemCount: '80+ Models',
-      href: '/shop/washing-machine',
+      href: '/shop?category=Washing%20Machine',
     },
     {
       id: 'fan',
@@ -49,7 +49,7 @@ const CategoryGrid = () => {
       description: 'Stylish and energy efficient',
       image: fanImage,
       itemCount: '100+ Models',
-      href: '/shop/fan',
+      href: '/shop?category=Fan',
     },
     {
       id: 'water-heater',
@@ -57,7 +57,7 @@ const CategoryGrid = () => {
       description: 'Instant and storage heaters',
       image: '/crompton wh.jpg',
       itemCount: '60+ Models',
-      href: '/shop/water-heater',
+      href: '/shop?category=Water%20Heater',
     },
     {
       id: 'air-cooler',
@@ -65,7 +65,7 @@ const CategoryGrid = () => {
       description: 'Eco-friendly cooling solutions',
       image: '/voltas air.jpg',
       itemCount: '40+ Models',
-      href: '/shop/air-cooler',
+      href: '/shop?category=Air%20Cooler',
     },
   ];
 
@@ -82,7 +82,7 @@ const CategoryGrid = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {categories.map((category) => (
             <Card 
               key={category.id} 
@@ -92,23 +92,23 @@ const CategoryGrid = () => {
                 <img
                   src={category.image}
                   alt={category.name}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* Item count badge */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                  <span className="text-sm font-medium text-secondary">{category.itemCount}</span>
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white/90 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full">
+                  <span className="text-xs sm:text-sm font-medium text-secondary">{category.itemCount}</span>
                 </div>
               </div>
               
-              <CardContent className="p-6">
-                <div className="space-y-4">
+              <CardContent className="p-4 sm:p-6">
+                <div className="space-y-3 sm:space-y-4">
                   <div>
-                    <h3 className="text-item-title text-secondary group-hover:text-primary transition-colors">
+                    <h3 className="text-lg sm:text-xl font-semibold text-secondary group-hover:text-primary transition-colors">
                       {category.name}
                     </h3>
-                    <p className="text-small mt-1">
+                    <p className="text-xs sm:text-sm text-gray-600 mt-1">
                       {category.description}
                     </p>
                   </div>
@@ -116,10 +116,10 @@ const CategoryGrid = () => {
                   <Button 
                     asChild 
                     variant="ghost" 
-                    className="w-full justify-between group/btn hover:bg-primary hover:text-white"
+                    className="w-full justify-between group/btn hover:bg-primary hover:text-white min-h-[44px]"
                   >
                     <Link to={category.href}>
-                      <span>Shop Now</span>
+                      <span className="text-sm sm:text-base">Shop Now</span>
                       <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </Button>

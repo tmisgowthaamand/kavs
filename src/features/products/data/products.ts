@@ -413,6 +413,144 @@ export const products: Product[] = [
       "Refrigerant": "R32",
       "Warranty": "1 Year on Product, 10 Years on Compressor"
     }
+  },
+  {
+    id: "13",
+    title: "Blue Star 1.5 Ton 5 Star Inverter Split AC",
+    brand: "Blue Star",
+    category: "AC",
+    price: 46990,
+    mrp: 52990,
+    discountPct: 11,
+    rating: 4.4,
+    reviewsCount: 567,
+    image: "/blue star logo.jpg",
+    inStock: true,
+    capacity: "1.5 Ton",
+    energyRating: "5 Star",
+    description: "Blue Star's premium 5-star inverter AC with advanced cooling technology and energy efficiency. Features copper condenser and anti-bacterial filter.",
+    images: [
+      "/blue star logo.jpg",
+      "/blue star logo.jpg"
+    ],
+    features: [
+      "5 Star Energy Rating",
+      "Inverter Technology",
+      "Copper Condenser",
+      "Anti-bacterial Filter",
+      "Stabilizer Free Operation"
+    ],
+    tags: ["AC", "Blue Star", "Inverter", "5 Star"],
+    specs: {
+      "Cooling Capacity": "1.5 Ton",
+      "Energy Rating": "5 Star",
+      "Special Features": "Copper Condenser, Anti-bacterial Filter",
+      "Refrigerant": "R32",
+      "Warranty": "1 Year on Product, 5 Years on Compressor"
+    }
+  },
+  {
+    id: "14",
+    title: "Blue Star 300L Double Door Refrigerator",
+    brand: "Blue Star",
+    category: "Refrigerator",
+    price: 32990,
+    mrp: 37990,
+    discountPct: 13,
+    rating: 4.2,
+    reviewsCount: 423,
+    image: "/blue star logo.jpg",
+    inStock: true,
+    capacity: "300L",
+    description: "Blue Star's energy-efficient double door refrigerator with advanced cooling technology and spacious storage compartments.",
+    images: [
+      "/blue star logo.jpg",
+      "/blue star logo.jpg"
+    ],
+    features: [
+      "300L Capacity",
+      "Double Door Design",
+      "Energy Efficient",
+      "Toughened Glass Shelves",
+      "Vegetable Crisper"
+    ],
+    tags: ["Refrigerator", "Blue Star", "Double Door"],
+    specs: {
+      "Capacity": "300L",
+      "Type": "Double Door",
+      "Energy Rating": "3 Star",
+      "Defrosting": "Auto Defrost",
+      "Warranty": "1 Year Comprehensive, 10 Years on Compressor"
+    }
+  },
+  {
+    id: "15",
+    title: "Panasonic 1.5 Ton 5 Star Inverter Split AC",
+    brand: "Panasonic",
+    category: "AC",
+    price: 48990,
+    mrp: 54990,
+    discountPct: 11,
+    rating: 4.5,
+    reviewsCount: 789,
+    image: "/panasonic logo.jpg",
+    inStock: true,
+    capacity: "1.5 Ton",
+    energyRating: "5 Star",
+    description: "Panasonic's advanced 5-star inverter AC with Japanese technology for superior cooling performance and energy efficiency.",
+    images: [
+      "/panasonic logo.jpg",
+      "/panasonic logo.jpg"
+    ],
+    features: [
+      "5 Star Energy Rating",
+      "Japanese Technology",
+      "Inverter Compressor",
+      "PM 2.5 Filter",
+      "Copper Condenser"
+    ],
+    tags: ["AC", "Panasonic", "Inverter", "5 Star"],
+    specs: {
+      "Cooling Capacity": "1.5 Ton",
+      "Energy Rating": "5 Star",
+      "Special Features": "PM 2.5 Filter, Japanese Technology",
+      "Refrigerant": "R32",
+      "Warranty": "1 Year on Product, 10 Years on Compressor"
+    }
+  },
+  {
+    id: "16",
+    title: "Panasonic 7 Kg Fully Automatic Top Load Washing Machine",
+    brand: "Panasonic",
+    category: "Washing Machine",
+    price: 21990,
+    mrp: 25990,
+    discountPct: 15,
+    rating: 4.3,
+    reviewsCount: 645,
+    image: "/panasonic logo.jpg",
+    inStock: true,
+    capacity: "7 Kg",
+    description: "Panasonic's efficient top load washing machine with Japanese technology for superior washing performance and fabric care.",
+    images: [
+      "/panasonic logo.jpg",
+      "/panasonic logo.jpg"
+    ],
+    features: [
+      "7 Kg Capacity",
+      "Fully Automatic",
+      "Japanese Technology",
+      "Multiple Wash Programs",
+      "Energy Efficient"
+    ],
+    tags: ["Washing Machine", "Panasonic", "Top Load"],
+    specs: {
+      "Capacity": "7 Kg",
+      "Type": "Fully Automatic Top Load",
+      "Energy Rating": "4 Star",
+      "Wash Programs": "10",
+      "Warranty": "2 Years Comprehensive, 10 Years on Motor"
+    }
   }
 ];
 

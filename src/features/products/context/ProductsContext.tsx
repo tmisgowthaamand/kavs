@@ -64,11 +64,22 @@ const productsReducer = (state: ProductsState, action: ProductsAction): Products
       }
 
       if (categories?.length) {
-        filtered = filtered.filter(product => categories.includes(product.category));
+        filtered = filtered.filter(product => 
+          categories.some(cat => 
+            cat.toLowerCase() === product.category.toLowerCase() ||
+            cat === product.category
+          )
+        );
       }
 
       if (brands?.length) {
-        filtered = filtered.filter(product => brands.includes(product.brand));
+        filtered = filtered.filter(product => 
+          brands.some(brand => 
+            brand.toLowerCase() === product.brand.toLowerCase() ||
+            brand === product.brand ||
+            brand.toLowerCase().replace(/\s+/g, '-') === product.brand.toLowerCase().replace(/\s+/g, '-')
+          )
+        );
       }
 
       if (priceRange) {
@@ -77,7 +88,9 @@ const productsReducer = (state: ProductsState, action: ProductsAction): Products
       }
 
       if (ratings?.length) {
-        filtered = filtered.filter(product => ratings.some(rating => Math.floor(product.rating) === rating));
+        filtered = filtered.filter(product => 
+          ratings.some(rating => product.rating >= rating)
+        );
       }
 
       if (inStock !== undefined) {
