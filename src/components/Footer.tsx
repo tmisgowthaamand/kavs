@@ -153,7 +153,7 @@ const Footer = () => {
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#FF7A00] flex-shrink-0" />
-                <p className="text-sm text-[#9CA3AF]">123 Main Road, City, State - 123456</p>
+                <p className="text-sm text-[#9CA3AF]">No:505/B23, Asirvatham Nagar,<br />MS Road, Vetturnimadam,<br />Nagercoil, Kanniyakumari,<br />Tamil Nadu - 629001</p>
               </div>
             </div>
           </motion.div>

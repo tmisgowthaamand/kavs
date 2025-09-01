@@ -26,21 +26,23 @@ const Header = () => {
   return (
     <>
       {/* Top bar */}
-      <div className="bg-secondary text-white py-2 text-sm">
-        <div className="container-main flex items-center px-4 sm:px-6">
-          <div className="flex items-center gap-2 sm:gap-4 md:gap-6 overflow-hidden">
-            <div className="flex items-center gap-1 sm:gap-2 min-w-0 flex-shrink-0">
-              <Phone className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-              <span className="truncate text-xs sm:text-sm">+91 98765 43210</span>
+      <div className="bg-secondary text-white py-3 text-sm">
+        <div className="container-main px-4 sm:px-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 w-full">
+              <div className="flex items-center gap-2 whitespace-nowrap">
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <a href="tel:+919876543210" className="hover:underline transition-colors">+91 98765 43210</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 flex-shrink-0" />
+                <span className="whitespace-nowrap">Kanniyakumari, Tamil Nadu</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4" />
+                <span className="whitespace-nowrap">Mon-Sat: 9AM-8PM</span>
+              </div>
             </div>
-            <div className="hidden sm:flex items-center gap-2 min-w-0">
-              <MapPin className="h-4 w-4 flex-shrink-0" />
-              <span className="truncate">Mumbai, Maharashtra</span>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center gap-2">
-            <Clock className="h-4 w-4" />
-            <span className="whitespace-nowrap">Mon-Sat: 9AM-8PM</span>
           </div>
         </div>
       </div>
@@ -219,7 +221,7 @@ const Header = () => {
                       </div>
                       <div className="flex items-center gap-3">
                         <MapPin className="h-5 w-5 text-primary" />
-                        <span className="text-sm">Mumbai, Maharashtra</span>
+                        <span className="text-sm">Kanniyakumari, Tamil Nadu</span>
                       </div>
                     </div>
                   </div>
