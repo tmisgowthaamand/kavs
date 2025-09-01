@@ -234,6 +234,47 @@ export const products: Product[] = [
       "Power Consumption": "2000W",
       "Special Features":"Blue Diamond Glass Lined Tank, 5 Years Warranty"
     }
+  },
+  {
+    id: "13",
+    title: "Blue Star 300L Double Door Refrigerator",
+    brand: "Blue Star",
+    category: "Refrigerator",
+    price: 32990,
+    mrp: 37990,
+    discountPct: 13,
+    rating: 4.2,
+    reviewsCount: 423,
+    image: "/blue star refrig.jpg",
+    inStock: true,
+    capacity: "300L",
+    energyRating: "4 Star",
+    specs: {
+      "Capacity": "300L",
+      "Type": "Double Door",
+      "Energy Rating": "4 Star",
+      "Special Features": "Toughened Glass Shelves, Vegetable Crisper, Energy Efficient"
+    }
+  },
+  {
+    id: "14",
+    title: "Panasonic 1.5 Ton 5 Star Inverter Split AC",
+    brand: "Panasonic",
+    category: "AC",
+    price: 48990,
+    mrp: 54990,
+    discountPct: 11,
+    rating: 4.4,
+    reviewsCount: 789,
+    image: "/panasonic ac.jpg",
+    inStock: true,
+    capacity: "1.5 Ton",
+    energyRating: "5 Star",
+    specs: {
+      "Cooling Capacity": "1.5 Ton",
+      "Energy Rating": "5 Star",
+      "Special Features": "Japanese Technology, Inverter Compressor, PM 2.5 Filter, Copper Condenser"
+    }
   }
 ];
 
@@ -259,6 +300,8 @@ export const brands = [
   { id: 'havells', name: 'Havells' },
   { id: 'crompton', name: 'Crompton' },
   { id: 'symphony', name: 'Symphony' },
+  { id: 'blue-star', name: 'Blue Star' },
+  { id: 'panasonic', name: 'Panasonic' },
 ];
 
 export const priceRanges = [

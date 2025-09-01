@@ -424,14 +424,14 @@ export const products: Product[] = [
     discountPct: 11,
     rating: 4.4,
     reviewsCount: 567,
-    image: "/blue star logo.jpg",
+    image: "/blue star ac.jpg",
     inStock: true,
     capacity: "1.5 Ton",
     energyRating: "5 Star",
     description: "Blue Star's premium 5-star inverter AC with advanced cooling technology and energy efficiency. Features copper condenser and anti-bacterial filter.",
     images: [
-      "/blue star logo.jpg",
-      "/blue star logo.jpg"
+      "/blue star ac.jpg",
+      "/blue star ac.jpg"
     ],
     features: [
       "5 Star Energy Rating",
@@ -459,13 +459,13 @@ export const products: Product[] = [
     discountPct: 13,
     rating: 4.2,
     reviewsCount: 423,
-    image: "/blue star logo.jpg",
+    image: "/blue star refrig.jpg",
     inStock: true,
     capacity: "300L",
     description: "Blue Star's energy-efficient double door refrigerator with advanced cooling technology and spacious storage compartments.",
     images: [
-      "/blue star logo.jpg",
-      "/blue star logo.jpg"
+      "/blue star refrig.jpg",
+      "/blue star refrig.jpg"
     ],
     features: [
       "300L Capacity",
@@ -493,14 +493,14 @@ export const products: Product[] = [
     discountPct: 11,
     rating: 4.5,
     reviewsCount: 789,
-    image: "/panasonic logo.jpg",
+    image: "/panasonic ac.jpg",
     inStock: true,
     capacity: "1.5 Ton",
     energyRating: "5 Star",
     description: "Panasonic's advanced 5-star inverter AC with Japanese technology for superior cooling performance and energy efficiency.",
     images: [
-      "/panasonic logo.jpg",
-      "/panasonic logo.jpg"
+      "/panasonic ac.jpg",
+      "/panasonic ac.jpg"
     ],
     features: [
       "5 Star Energy Rating",
@@ -528,13 +528,13 @@ export const products: Product[] = [
     discountPct: 15,
     rating: 4.3,
     reviewsCount: 645,
-    image: "/panasonic logo.jpg",
+    image: "/panasonic washing.jpg",
     inStock: true,
     capacity: "7 Kg",
     description: "Panasonic's efficient top load washing machine with Japanese technology for superior washing performance and fabric care.",
     images: [
-      "/panasonic logo.jpg",
-      "/panasonic logo.jpg"
+      "/panasonic washing.jpg",
+      "/panasonic washing.jpg"
     ],
     features: [
       "7 Kg Capacity",
