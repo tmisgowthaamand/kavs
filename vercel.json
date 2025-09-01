@@ -11,6 +11,7 @@
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
     { "src": "/favicon.ico", "dest": "/favicon.ico" },
     { "src": "/robots.txt", "dest": "/robots.txt" },
+    { "src": "/(.*\\.(jpg|jpeg|png|gif|svg|ico|webp))", "dest": "/$1" },
     { "src": "/(.*)",
       "dest": "/index.html"
     }
